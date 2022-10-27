@@ -1,7 +1,15 @@
 import './App.css';
+import { Layout } from './Layout';
+import Home from './section/Home';
 
 function App() {
-  return <div className="bg-red-400 h-screen">I &apos;m here Kwee</div>;
+  return (
+    <div>
+      <Layout>
+        <Home />
+      </Layout>
+    </div>
+  );
 }
 
 export default App;
