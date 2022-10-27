@@ -44,7 +44,7 @@ const Appbar = () => {
 
   return (
     <div className="w-full bg-white p-9">
-      <div className="flex items-center justify-between w-[1800px] mx-auto  ">
+      <div className="flex items-center justify-between 2xl:w-[1800px] lg:w-[1200px] mx-auto  ">
         <div className="flex items-center space-x-4">
           <div>
             <svg
