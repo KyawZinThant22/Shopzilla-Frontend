@@ -10,3 +10,9 @@ a{
 body{
     background-color: yellow;
 }
+
+/* Applicable class */
+
+.badge{
+    @apply bg-black text-white rounded-full text-xs w-4 text-center ml-1;
+}

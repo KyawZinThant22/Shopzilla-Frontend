@@ -1205,6 +1205,11 @@
     "minimatch" "^3.1.2"
     "strip-json-comments" "^3.1.1"
 
+"@heroicons/react@^2.0.12":
+  "integrity" "sha512-FZxKh3i9aKIDxyALTgIpSF2t6V6/eZfF5mRu41QlwkX3Oxzecdm1u6dpft6PQGxIBwO7TKYWaMAYYL8mp/EaOg=="
+  "resolved" "https://registry.npmjs.org/@heroicons/react/-/react-2.0.12.tgz"
+  "version" "2.0.12"
+
 "@humanwhocodes/config-array@^0.11.6":
   "integrity" "sha512-jJr+hPTJYKyDILJfhNSHsjiwXYf26Flsz8DvNndOsHs5pwSnpGUEy8yzF0JYhCEvTDdV2vuOK5tt8BVhwO5/hg=="
   "resolved" "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.11.6.tgz"
