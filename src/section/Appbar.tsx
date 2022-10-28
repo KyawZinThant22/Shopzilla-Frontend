@@ -44,8 +44,8 @@ const Appbar = () => {
   };
 
   return (
-    <div className="w-full bg-white p-9">
-      <div className="flex items-center justify-between 2xl:w-[1800px] lg:w-[1200px] mx-auto  ">
+    <div className="max-w-screen bg-white p-9">
+      <div className="flex items-center justify-between w-full mx-auto  ">
         <div className="flex items-center space-x-4">
           <Bars />
           <h1 className="font-bold uppercase text-2xl cursor-pointer">Shopzilla</h1>
