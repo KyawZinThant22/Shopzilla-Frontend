@@ -34,37 +34,41 @@ const Appbar = () => {
   ];
 
   let activeStyle = {
-    color: 'red',
+    color: 'black',
     textDecoration: 'none',
+    
   };
 
   let styled = {
-    color: 'black',
+    color: '#3D3C42',
     textDecoration: 'none',
   };
 
   return (
     <div className="max-w-screen bg-white p-9">
-      <div className="flex items-center justify-between w-full mx-auto  ">
-        <div className="flex items-center space-x-4">
+      <div className="grid grid-cols-3 xl:flex xl:justify-between items-center w-full mx-auto  ">
+        <div className="col-span-2 grid grid-cols-2 items-center xl:flex xl:items-center space-x-4">
           <Bars />
-          <h1 className="font-bold uppercase text-2xl cursor-pointer">Shopzilla</h1>
-          {navLink.map((nav) => (
-            <NavLink
-              key={nav.nav}
-              to={nav.route}
-              style={({ isActive }) => (isActive ? activeStyle : styled)}
-            >
-              <span className="font-light text-sm ml-5">{nav.nav}</span>
-            </NavLink>
-          ))}
+          <h1 className="font-bold uppercase text-2xl cursor-pointer justify-self-center">Shopzilla</h1>
+          <nav className='flex'>
+            {navLink.map((nav) => (
+              <NavLink
+                key={nav.nav}
+                to={nav.route}
+                style={({ isActive }) => (isActive ? activeStyle : styled)}
+                className='relative ml-6'
+              >
+                <span className="font-light text-sm hidden xl:block nav-link hover:after:w-full hover:after:left-0">{nav.nav}</span>
+              </NavLink>
+            ))}
+          </nav>
         </div>
-        <div className="flex items-center space-x-4">
-          <span className="font-light text-sm cursor-pointer">Sign in</span>
-          <div className="cursor-pointer">
+        <div className="flex items-center justify-self-end space-x-4">
+          <span className="font-light text-sm cursor-pointer hidden xl:block">Sign in</span>
+          <div className="cursor-pointer hidden xl:block">
             <Search />
           </div>
-          <div className="flex items-center cursor-pointer">
+          <div className="items-center cursor-pointer hidden xl:flex">
             <Heart />
             <label className="badge">0</label>
           </div>
@@ -79,3 +83,4 @@ const Appbar = () => {
 };
 
 export default Appbar;
+

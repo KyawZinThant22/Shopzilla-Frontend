@@ -16,3 +16,23 @@ body{
 .badge{
     @apply bg-black text-white rounded-full text-xs w-4 text-center ml-1;
 }
+
+.nav-link{
+    @apply after:content-[''] after:absolute after:right-0 after:-bottom-1 after:w-0 after:border-b after:border-solid after:border-black after:transition-[width] after:duration-300
+}
+
+/* Custom Css */
+
+/* .nav-link:after{
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -4px;
+    width: 0;
+    border-bottom: 1px solid;
+    transition: width .3s;
+}
+
+.nav-link:hover:after{
+    width: 100%;
+} */
