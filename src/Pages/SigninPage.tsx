@@ -46,7 +46,7 @@ const SigninPage = ({ setShow }: ISProps) => {
   return (
     <div className="p-12 px-20   flex flex-col gap-12 justify-between w-full h-full">
       <div className="flex justify-between items-center">
-        <h1 className="font-medium text-lg">Sign in</h1>
+        <h1 className="font-medium text-lg">{CreateNew ? "Sign up" : "Sign in"}</h1>
         <div className="flex items-center" onClick={() => setShow(false)}>
           <h3 className="text-sm font-semibold">Close</h3>
           <CloseIcon />
