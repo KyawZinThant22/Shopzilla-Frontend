@@ -4,8 +4,8 @@ import { NavProps } from '../@types';
 //third party
 import { NavLink } from 'react-router-dom';
 import { Bars, Cart, Heart, Search } from '../assets/icons';
-
-import { Drawer, SignInPage } from '../Components/Element';
+import { Drawer } from '../Components/Element';
+import { SignInPage } from '../Pages';
 
 const Appbar = () => {
   const navLink: NavProps[] = [

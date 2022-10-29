@@ -1,5 +1,2 @@
-function test() {
-  console.log('test');
-}
-
-export default Function;
+export { default as SignInPage } from './SigninPage';
+export { default as LoginPage } from './LoginPage';
