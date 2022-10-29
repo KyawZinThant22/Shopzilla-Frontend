@@ -1,7 +1,8 @@
 import React from 'react';
+import { Helmet } from '../Components/Element';
 
 const Journal = () => {
-  return <div>Journal</div>;
+  return <Helmet title="Journal Page" />;
 };
 
 export default Journal;

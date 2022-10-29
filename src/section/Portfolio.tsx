@@ -1,9 +1,8 @@
-import React from 'react'
+import React from 'react';
+import { Helmet } from '../Components/Element';
 
 const Portfolio = () => {
-  return (
-    <div>Portfolio</div>
-  )
-}
+  return <Helmet title="Portfolio Page" />;
+};
 
-export default Portfolio
+export default Portfolio;

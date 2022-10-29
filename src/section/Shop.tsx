@@ -1,7 +1,8 @@
 import React from 'react';
+import { Helmet } from '../Components/Element';
 
 const Shop = () => {
-  return <div>Shop</div>;
+  return <Helmet title="Shop" />;
 };
 
 export default Shop;

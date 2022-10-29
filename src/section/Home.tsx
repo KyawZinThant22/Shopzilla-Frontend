@@ -1,7 +1,8 @@
 import React from 'react';
+import { Helmet } from '../Components/Element';
 
 const Home = () => {
-  return <div>Home</div>;
+  return <Helmet title="Home Page" />;
 };
 
 export default Home;
