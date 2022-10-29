@@ -71,12 +71,12 @@ const Appbar = () => {
           </nav>
         </div>
         <div className=" items-center justify-self-end gap-4 hidden xl:flex">
-          <span className="font-light text-sm cursor-pointer" onClick={() => setShow(!show)}>
-            Sign in
-            <Drawer show={show} setShow={setShow}>
-              <SignInPage />
+          <div className="font-light text-sm cursor-pointer">
+            <span onClick={() => setShow(!show)}>Sign in</span>
+            <Drawer width="w-[600px]" show={show} setShow={setShow}>
+              <SignInPage setShow={setShow} />
             </Drawer>
-          </span>
+          </div>
 
           <div className="cursor-pointer ">
             <Search />

@@ -1,5 +1,1 @@
-function test() {
-  console.log('test');
-}
-
-export default Function;
+export { default as TextField } from './TextField';
