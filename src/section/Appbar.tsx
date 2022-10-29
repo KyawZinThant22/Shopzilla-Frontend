@@ -4,7 +4,8 @@ import { NavProps } from '../@types';
 //third party
 import { NavLink } from 'react-router-dom';
 import { Bars, Cart, Heart, Search } from '../assets/icons';
-import SignInSideBar from '../Components/nav-section/SignInSidebar';
+
+import { Drawer, SignInPage } from '../Components/Element';
 
 const Appbar = () => {
   const navLink: NavProps[] = [
@@ -69,21 +70,27 @@ const Appbar = () => {
             ))}
           </nav>
         </div>
-        <div className="flex items-center justify-self-end space-x-4">
-          <span
-            className="font-light text-sm cursor-pointer hidden xl:block"
-            onClick={() => setShow(!show)}
-          >
+        <div className=" items-center justify-self-end gap-4 hidden xl:flex">
+          <span className="font-light text-sm cursor-pointer" onClick={() => setShow(!show)}>
             Sign in
+            <Drawer show={show} setShow={setShow}>
+              <SignInPage />
+            </Drawer>
           </span>
-          {show && <SignInSideBar show={show} setShow={setShow} />}
-          <div className="cursor-pointer hidden xl:block">
+
+          <div className="cursor-pointer ">
             <Search />
           </div>
-          <div className="items-center cursor-pointer hidden xl:flex">
+          <div className="items-center flex cursor-pointer">
             <Heart />
             <label className="badge">0</label>
           </div>
+          <div className="flex items-center cursor-pointer">
+            <Cart />
+            <label className="badge">0</label>
+          </div>
+        </div>
+        <div className="items-center justify-self-end gap-4 xl:hidden flex">
           <div className="flex items-center cursor-pointer">
             <Cart />
             <label className="badge">0</label>
