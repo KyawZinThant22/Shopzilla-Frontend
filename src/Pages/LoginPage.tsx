@@ -7,6 +7,9 @@ import { useForm } from 'react-hook-form';
 import { TextField } from '../Components/Form';
 import { Button } from '../Components/Element';
 
+//third party
+import { toast } from 'react-toastify';
+
 const LoginPage = () => {
   const LoginForm = Yup.object().shape({
     email: Yup.string().email().required('Email is required'),
@@ -24,13 +27,14 @@ const LoginPage = () => {
 
   const onsubmit = async (data: any) => {
     console.log(data);
+    toast.success('successfully sign in');
     reset();
   };
   return (
     <FormProvider methods={methods} onSubmit={handleSubmit(onsubmit)}>
       <div className="flex flex-col gap-8">
         <TextField label="Email address" name="email" />
-        <TextField label="Password" name="password" />
+        <TextField label="Password" name="password" type="password" />
         <p className="leading-relaxed tracking-wide font-medium text-justify text-[14px]">
           Your personal data will be used to support your experience throughout this website, to
           manage access to your account, and for other purposes described in our privacy policy.

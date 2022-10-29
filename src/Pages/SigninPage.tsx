@@ -15,6 +15,9 @@ import { useForm } from 'react-hook-form';
 import { Button } from '../Components/Element';
 import LoginPage from './LoginPage';
 
+//third party
+import { toast } from 'react-toastify';
+
 interface ISProps {
   setShow: Dispatch<SetStateAction<boolean>>;
 }
@@ -37,6 +40,7 @@ const SigninPage = ({ setShow }: ISProps) => {
   const onSubmit = async (data: any) => {
     console.log(data);
     reset();
+    toast.success('successfully sign in');
   };
 
   return (
