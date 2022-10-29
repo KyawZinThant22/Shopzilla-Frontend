@@ -6,10 +6,21 @@ import { EyeClose, EyeOpen } from '../../assets/icons';
 interface FormProps {
   name: string;
   type?: string;
-  label: string;
+  label?: string;
+  animated?: boolean;
+  placeholder?: string;
+  className?: string;
 }
 
-const TextField = ({ name, label, type = 'text', ...other }: FormProps) => {
+const TextField = ({
+  name,
+  label,
+  type = 'text',
+  className,
+  placeholder,
+  animated = true,
+  ...other
+}: FormProps) => {
   const { control } = useFormContext();
 
   const [inputType, setInputType] = useState(type);
@@ -24,8 +35,15 @@ const TextField = ({ name, label, type = 'text', ...other }: FormProps) => {
       control={control}
       render={({ field, fieldState: { error } }) => (
         <div className="group">
-          <div className={`transform ${focus && '-translate-y-3 text-[14px]'} duration-300 `}>
-            <label htmlFor={label} className={`${focus ? 'text-black' : ' text-gray-500'}`}>
+          <div
+            className={`transform ${
+              focus && animated && '-translate-y-3 text-[14px]'
+            } duration-300 `}
+          >
+            <label
+              htmlFor={label}
+              className={`${focus && animated ? 'text-black' : ' text-gray-500'}`}
+            >
               {label}
             </label>
           </div>
@@ -33,7 +51,7 @@ const TextField = ({ name, label, type = 'text', ...other }: FormProps) => {
             <div className="flex items-center justify-between">
               <input
                 {...field}
-                className="w-full flex group-focus:text-red-400"
+                className={` ${className} w-full flex group-focus:text-red-400`}
                 value={
                   typeof field.value === 'number' && field.value === 0 ? '' : field.value || ''
                 }
@@ -41,6 +59,7 @@ const TextField = ({ name, label, type = 'text', ...other }: FormProps) => {
                 onBlur={() => setFocus(false)}
                 type={inputType}
                 autoComplete="off"
+                placeholder={placeholder}
               />
               {type === 'password' && (
                 <div onClick={togglePassword}>
@@ -50,7 +69,7 @@ const TextField = ({ name, label, type = 'text', ...other }: FormProps) => {
             </div>
             <div
               className={`${
-                focus && 'border-t-[2.5px] mt-3'
+                focus && animated && 'border-t-[2.5px] mt-3'
               } w-full  my-2 group-hover:border-black border-t-[2.5px]   border-x-0 border-b-0`}
             ></div>
             {error && (

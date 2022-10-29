@@ -52,11 +52,9 @@ const Appbar = () => {
       <div className="grid grid-cols-3 xl:flex xl:justify-between items-center w-full mx-auto  ">
         <div className="col-span-2 grid grid-cols-2 items-center xl:flex xl:items-center space-x-4">
           <Bars />
-          <NavLink
-            to="/home"
-          >
+          <NavLink to="/home">
             <h1 className="font-bold uppercase text-2xl cursor-pointer justify-self-center">
-            Shopzilla
+              Shopzilla
             </h1>
           </NavLink>
           <nav className="flex">
