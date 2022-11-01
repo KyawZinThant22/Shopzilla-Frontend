@@ -40,7 +40,7 @@ const Footer = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3">
         <div className="space-y-7">
           <h2 className="font-bold text-2xl uppercase">Shopzilla</h2>
-          <p className="text-xs  leading-1 w-[25rem]">
+          <p className="text-xs  leading-1 xl:w-[25rem] md:w-[20rem] ">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum nisi itaque excepturi
             labore commodi fugit?
           </p>
@@ -60,7 +60,7 @@ const Footer = () => {
         </div>
         <div className="space-y-8">
           <h2 className="font-thin text-2xl">Join our list</h2>
-          <p className="text-sm mt-4 w-[30rem]">
+          <p className="text-sm mt-4 xl:w-[30rem] md:w-[23rem] ">
             Signup to be the first to hear about exclusive deals, special offers and upcoming
             collections
           </p>
@@ -68,7 +68,7 @@ const Footer = () => {
           <FormProvider
             onSubmit={handleSubmit(onSubmit)}
             methods={methods}
-            className="relative w-[30rem]  "
+            className="relative xl:w-[30rem] md:w-[23rem]  "
           >
             <TextField
               animated={false}
