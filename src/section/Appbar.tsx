@@ -3,9 +3,13 @@ import { NavProps } from '../@types';
 
 //third party
 import { NavLink } from 'react-router-dom';
-import { Bars, Cart, Heart, Search } from '../assets/icons';
+import { Bars, Cart, Heart, Logout, Search } from '../assets/icons';
 import { Drawer } from '../Components/Element';
 import { SignInPage } from '../Pages';
+import { useAppDispatch, useAppSelector } from '../redux/hook';
+import { unSetAuth } from '../redux/reducers/auth';
+import Cookies from 'js-cookie';
+import { RootState } from '../redux';
 
 const Appbar = () => {
   const navLink: NavProps[] = [
@@ -46,7 +50,13 @@ const Appbar = () => {
   };
 
   const [show, setShow] = useState<boolean>(false);
+  const dispatch = useAppDispatch();
+  const authData = useAppSelector((state: RootState) => state.auth.value);
 
+  const handleLogout = () => {
+    Cookies.remove('token');
+    dispatch(unSetAuth());
+  };
   return (
     <div className="max-w-screen bg-white p-9">
       <div className="grid grid-cols-3 xl:flex xl:justify-between items-center w-full mx-auto  ">
@@ -74,10 +84,23 @@ const Appbar = () => {
         </div>
         <div className=" items-center justify-self-end gap-4 hidden xl:flex">
           <div className="font-light text-sm cursor-pointer">
-            <span onClick={() => setShow(!show)}>Sign in</span>
-            <Drawer width="w-[600px]" show={show} setShow={setShow}>
-              <SignInPage setShow={setShow} />
-            </Drawer>
+            {authData.userName ? (
+              <>
+                <span onClick={() => setShow(!show)} className="text-xs">
+                  My Account
+                </span>
+                <Drawer width="w-[600px]" show={show} setShow={setShow}>
+                  <SignInPage setShow={setShow} />
+                </Drawer>
+              </>
+            ) : (
+              <>
+                <span onClick={() => setShow(!show)}>Sign in</span>
+                <Drawer width="w-[600px]" show={show} setShow={setShow}>
+                  <SignInPage setShow={setShow} />
+                </Drawer>
+              </>
+            )}
           </div>
 
           <div className="cursor-pointer ">
@@ -90,6 +113,9 @@ const Appbar = () => {
           <div className="flex items-center cursor-pointer">
             <Cart />
             <label className="badge">0</label>
+          </div>
+          <div className="cursor-pointer" onClick={handleLogout}>
+            <Logout />
           </div>
         </div>
         <div className="items-center justify-self-end gap-4 xl:hidden flex">

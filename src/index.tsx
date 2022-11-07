@@ -24,8 +24,7 @@ root.render(
           <Routes />
         </Router>
         <ToastContainer />
-
-        <Footer />
+        {/* <Footer /> */}
       </HelmetProvider>
     </Provider>
   </React.StrictMode>

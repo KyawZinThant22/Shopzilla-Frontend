@@ -5,3 +5,4 @@ export { default as Bars } from './Bars';
 export { default as CloseIcon } from './CloseIcon';
 export { default as EyeOpen } from './EyeOpen';
 export { default as EyeClose } from './EyeClose';
+export { default as Logout } from './Logout';

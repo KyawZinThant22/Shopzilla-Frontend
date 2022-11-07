@@ -37,6 +37,7 @@ const Admin = () =>
         },
       ],
     },
+    { path: '*', element: <Navigate to="/" replace /> },
   ]);
 
 export default Admin;
