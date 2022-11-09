@@ -58,7 +58,7 @@ const Appbar = () => {
     dispatch(unSetAuth());
   };
   return (
-    <div className="max-w-screen bg-white p-9">
+    <div className="max-w-screen relative bg-transparent hover:bg-white transition-all duration-300 p-9 z-10">
       <div className="grid grid-cols-3 xl:flex xl:justify-between items-center w-full mx-auto  ">
         <div className="col-span-2 grid grid-cols-2 items-center xl:flex xl:items-center space-x-4">
           <Bars />
