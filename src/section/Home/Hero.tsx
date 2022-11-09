@@ -1,5 +1,5 @@
 import React from 'react';
-import chair from '../../assets/products/chair.png';
+import { chair } from '../../assets/products';
 
 const Hero = () => {
   return (
