@@ -1,10 +1,7 @@
 import React from 'react';
+import { IconProps } from '../../@types';
 
-interface Props {
-  styled: string;
-}
-
-function Right({ styled }: Props) {
+function Right({ styled }: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
