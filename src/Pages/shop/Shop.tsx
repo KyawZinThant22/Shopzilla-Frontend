@@ -13,6 +13,7 @@ const Shop = () => {
       link: '/shop',
     },
   };
+
   return (
     <>
       <Helmet title="Shop" />

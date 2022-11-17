@@ -2,7 +2,7 @@ import { useRoutes, Navigate } from 'react-router-dom';
 import { AppLayout } from '../Layout';
 
 import { Features, Journal, Pages, Portfolio, Shop } from '../section';
-import Home from '../section/Home/Home';
+import { Home } from '../Pages';
 
 const Admin = () =>
   useRoutes([
